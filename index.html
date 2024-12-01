@@ -509,6 +509,61 @@
   </footer>
   <!-- footer section -->
 
+
+
+<script>
+
+
+// Ruta al archivo JSON
+const url = 'https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/datos/galeria.json';
+
+// Contenedores para cada categoría
+const mujeresContainer = document.getElementById('cabelloMujeres');
+const hombresContainer = document.getElementById('cabelloHombres');
+const unnasContainer = document.getElementById('unnas');
+
+// Fetch para cargar los datos
+fetch(url)
+  .then(response => response.json())
+  .then(data => {
+    // Cabello Mujeres
+    data.cabelloMujeres.forEach(item => {
+      mujeresContainer.innerHTML += `
+        <div class="card">
+          <img src="${item.imagen}" alt="Cabello Mujer" />
+          <p>${item.descripcion}</p>
+        </div>
+      `;
+    });
+
+    // Cabello Hombres
+    data.cabelloHombres.forEach(item => {
+      hombresContainer.innerHTML += `
+        <div class="card">
+          <img src="${item.imagen}" alt="Cabello Hombre" />
+          <p>${item.descripcion}</p>
+        </div>
+      `;
+    });
+
+    // Uñas
+    data.unnas.forEach(item => {
+      unnasContainer.innerHTML += `
+        <div class="card">
+          <img src="${item.imagen}" alt="Uñas" />
+          <p>Color: ${item.color}</p>
+          <p>Marca: ${item.marca}</p>
+        </div>
+      `;
+    });
+  })
+  .catch(error => console.error('Error al cargar la galería:', error));
+
+
+</script>
+
+
+
   <!-- jQery -->
   <script src="js/jquery-3.4.1.min.js"></script>
   <!-- popper js -->

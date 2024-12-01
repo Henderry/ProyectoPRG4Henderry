@@ -3,56 +3,7 @@
     {
       "id": 1,
       "descripcion": "Estilo moderno con ondas naturales.",
-      "imagen": "imagenes/download(1).jpg"
-    },
-    {
-        "id": 2,
-        "descripcion": "Estilo moderno con ondas naturales  .",
-        "imagen": "imagenes/download(2).jpg"
-      },  {
-        "id": 3,
-        "descripcion": "Estilo moderno con ondas naturales.",
-        "imagen": "imagenes/download(3).jpg"
-      },  {
-        "id": 4,
-        "descripcion": "Estilo moderno con ondas naturales.",
-        "imagen": "imagenes/download(4).jpg"
-      },  {
-        "id": 5,
-        "descripcion": "Estilo moderno con ondas naturales.",
-        "imagen": "imagenes/download(5).jpg"
-      },  {
-        "id": 6,
-        "descripcion": "Estilo moderno con ondas naturales.",
-        "imagen": "imagenes/download(6).jpg"
-      },  {
-        "id": 7,
-        "descripcion": "Estilo moderno con ondas naturales.",
-        "imagen": "imagenes/download(7).jpg"
-      },  {
-        "id": 8,
-        "descripcion": "Estilo moderno con ondas naturales.",
-        "imagen": "imagenes/download(8).jpg"
-      },  {
-        "id": 9,
-        "descripcion": "Estilo moderno con ondas naturales.",
-        "imagen": "imagenes/download(9).jpg"
-      },  {
-        "id": 10,
-        "descripcion": "Estilo moderno con ondas naturales.",
-        "imagen": "imagenes/download(10).jpg"
-      },  {
-        "id": 11,
-        "descripcion": "Estilo moderno con ondas naturales.",
-        "imagen": "imagenes/download(11).jpg"
-      },  {
-        "id": 12,
-        "descripcion": "Estilo moderno con ondas naturales.",
-        "imagen": "imagenes/download(12).jpg"
-      },  {
-        "id": 13,
-        "descripcion": "Estilo moderno con ondas naturales.",
-        "imagen": "imagenes/download(13).jpg"
-      }
+      "imagen": "https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/imagenes/client1.jpg"
+    }
   ]
 }
