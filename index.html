@@ -247,8 +247,9 @@
             <div class="box">
               <div>
                 <div class="img-box">
-                  <img src="https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/images/client1.jpg" alt="Peinado elegante para mujer">
-                </div>
+                  <img id="imagenDinamica" data-id="1" data-categoria="cabelloMujeres" src="" alt="Imagen dinámica">
+   
+            </div>
                 <div class="detail-box">
                   <h5>
                   Cabello Mujer
@@ -509,45 +510,44 @@
   </footer>
   <!-- footer section -->
 
-
 <script>// Ruta al archivo JSON
   const url = 'https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/datos/galeria.json';
   
-  // Función para cargar el JSON y retornar un elemento por ID
-  async function obtenerElementoPorId(categoria, id) {
+  // Función para cargar dinámicamente una imagen específica
+  async function cargarImagenDinamica() {
     try {
       const response = await fetch(url);
       const data = await response.json();
   
-      // Buscar el elemento en la categoría proporcionada
+      // Obtener el elemento img y sus atributos personalizados
+      const imgElement = document.getElementById('imagenDinamica');
+      const id = parseInt(imgElement.dataset.id); // Obtener el ID del data-id
+      const categoria = imgElement.dataset.categoria; // Obtener la categoría del data-categoria
+  
+      // Buscar el elemento específico en el JSON
       const elemento = data[categoria].find(item => item.id === id);
-      return elemento;
+  
+      if (elemento) {
+        // Asignar la imagen, título y descripción dinámicamente
+        imgElement.src = elemento.imagen;
+        imgElement.alt = elemento.descripcion;
+  
+        const tituloElement = document.getElementById('tituloDinamico');
+        const descripcionElement = document.getElementById('descripcionDinamica');
+  
+        tituloElement.textContent = categoria.replace(/cabello/, 'Cabello ');
+        descripcionElement.textContent = elemento.descripcion;
+      } else {
+        console.error('No se encontró el elemento con el ID especificado.');
+      }
     } catch (error) {
-      console.error('Error al cargar la galería:', error);
-      return null;
+      console.error('Error al cargar el JSON:', error);
     }
   }
   
-  // Ejemplo de uso
-  document.addEventListener('DOMContentLoaded', async () => {
-    // Obtener un elemento específico (por ejemplo, ID 1 de cabelloMujeres)
-    const elemento = await obtenerElementoPorId('cabelloMujeres', 1);
-  
-    if (elemento) {
-      // Colocar la imagen y descripción en un contenedor específico
-      const imgBox = document.querySelector('.img-box img');
-      const titleBox = document.querySelector('.detail-box h5');
-      const descBox = document.querySelector('.detail-box p');
-  
-      imgBox.src = elemento.imagen; // URL de la imagen
-      titleBox.textContent = 'Cabello Mujer'; // Categoría
-      descBox.textContent = elemento.descripcion; // Descripción
-    } else {
-      console.error('Elemento no encontrado');
-    }
-  });
+  // Llamar a la función al cargar el DOM
+  document.addEventListener('DOMContentLoaded', cargarImagenDinamica);
   </script>
-
 
 
   <!-- jQery -->
