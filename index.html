@@ -33,7 +33,7 @@
 </head>
 
 <body>
-
+ 
   <div class="hero_area">
   
     <!-- header section strats -->
@@ -247,7 +247,7 @@
             <div class="box">
               <div>
                 <div class="img-box">
-                  <img src="images/Cabello Mujer/CabelloRizado.jpg" alt="">
+                  <img src="https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/images/client1.jpg" alt="Peinado elegante para mujer">
                 </div>
                 <div class="detail-box">
                   <h5>
@@ -510,57 +510,43 @@
   <!-- footer section -->
 
 
-
-<script>
-
-
-// Ruta al archivo JSON
-const url = 'https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/datos/galeria.json';
-
-// Contenedores para cada categoría
-const mujeresContainer = document.getElementById('cabelloMujeres');
-const hombresContainer = document.getElementById('cabelloHombres');
-const unnasContainer = document.getElementById('unnas');
-
-// Fetch para cargar los datos
-fetch(url)
-  .then(response => response.json())
-  .then(data => {
-    // Cabello Mujeres
-    data.cabelloMujeres.forEach(item => {
-      mujeresContainer.innerHTML += `
-        <div class="card">
-          <img src="${item.imagen}" alt="Cabello Mujer" />
-          <p>${item.descripcion}</p>
-        </div>
-      `;
-    });
-
-    // Cabello Hombres
-    data.cabelloHombres.forEach(item => {
-      hombresContainer.innerHTML += `
-        <div class="card">
-          <img src="${item.imagen}" alt="Cabello Hombre" />
-          <p>${item.descripcion}</p>
-        </div>
-      `;
-    });
-
-    // Uñas
-    data.unnas.forEach(item => {
-      unnasContainer.innerHTML += `
-        <div class="card">
-          <img src="${item.imagen}" alt="Uñas" />
-          <p>Color: ${item.color}</p>
-          <p>Marca: ${item.marca}</p>
-        </div>
-      `;
-    });
-  })
-  .catch(error => console.error('Error al cargar la galería:', error));
-
-
-</script>
+<script>// Ruta al archivo JSON
+  const url = 'https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/datos/galeria.json';
+  
+  // Función para cargar el JSON y retornar un elemento por ID
+  async function obtenerElementoPorId(categoria, id) {
+    try {
+      const response = await fetch(url);
+      const data = await response.json();
+  
+      // Buscar el elemento en la categoría proporcionada
+      const elemento = data[categoria].find(item => item.id === id);
+      return elemento;
+    } catch (error) {
+      console.error('Error al cargar la galería:', error);
+      return null;
+    }
+  }
+  
+  // Ejemplo de uso
+  document.addEventListener('DOMContentLoaded', async () => {
+    // Obtener un elemento específico (por ejemplo, ID 1 de cabelloMujeres)
+    const elemento = await obtenerElementoPorId('cabelloMujeres', 1);
+  
+    if (elemento) {
+      // Colocar la imagen y descripción en un contenedor específico
+      const imgBox = document.querySelector('.img-box img');
+      const titleBox = document.querySelector('.detail-box h5');
+      const descBox = document.querySelector('.detail-box p');
+  
+      imgBox.src = elemento.imagen; // URL de la imagen
+      titleBox.textContent = 'Cabello Mujer'; // Categoría
+      descBox.textContent = elemento.descripcion; // Descripción
+    } else {
+      console.error('Elemento no encontrado');
+    }
+  });
+  </script>
 
 
 
