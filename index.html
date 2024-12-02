@@ -247,9 +247,8 @@
             <div class="box">
               <div>
                 <div class="img-box">
-                         <img id="imagenDinamica" data-id="1" data-categoria="cabelloMujeres" src="" alt="Imagen dinámica">
-   
-            </div>
+                         <img class="imagenDinamica" data-id="10" data-categoria="cabelloMujeres" src="" alt="Imagen dinámica">
+              </div>
                 <div class="detail-box">
                   <h5>
                   Cabello Mujer
@@ -266,8 +265,8 @@
             <div class="box">
               <div>
                 <div class="img-box">
-                  <img id="imagenDinamica" data-id="1" data-categoria="cabelloHombres" src="" alt="Imagen dinámica">
-    
+                  <img class="imagenDinamica" data-id="5" data-categoria="cabelloHombres" src="" alt="Imagen dinámica">
+              
                 </div>
                 <div class="detail-box">
                   <h5>
@@ -285,7 +284,7 @@
             <div class="box">
               <div>
                 <div class="img-box">
-                  <img src="images/Cabello Mujer/CabelloRizadoMedio.jpg" alt="">
+                  <img class="imagenDinamica" data-id="13" data-categoria="cabelloMujeres" src="" alt="Imagen dinámica">
                 </div>
                 <div class="detail-box">
                   <h5>
@@ -303,7 +302,7 @@
             <div class="box">
               <div>
                 <div class="img-box">
-                  <img src="images/Cabello Mujer/CabelloRizadoLargoConColoracion.jpg" alt="">
+                  <img class="imagenDinamica" data-id="12" data-categoria="cabelloMujeres" src="" alt="Imagen dinámica">
                 </div>
                 <div class="detail-box">
                   <h5>
@@ -321,7 +320,7 @@
             <div class="box">
               <div>
                 <div class="img-box">
-                  <img src="images/Cabello Mujer/CabelloLisoRojizo.jpg" alt="">
+                  <img class="imagenDinamica" data-id="8" data-categoria="cabelloMujeres" src="" alt="Imagen dinámica">
                 </div>
                 <div class="detail-box">
                   <h5>
@@ -379,7 +378,8 @@
             <div class="box">
               <div>
                 <div class="img-box">
-                  <img src="images/Cabellos Hombre/70578466_380744689289422_2854772896595705856_n.jpg" alt="">
+                  <img class="imagenDinamica" data-id="8" data-categoria="cabelloHombres" src="" alt="Imagen dinámica">
+              
                 </div>
                 <div class="detail-box">
                   <h5>
@@ -398,8 +398,8 @@
             <div class="box">
               <div>
                 <div class="img-box">
-                  <img src="images/Cabellos Hombre/70845011_380744645956093_9110616277612756992_n.jpg" alt="">
-                </div>
+                  <img class="imagenDinamica" data-id="9" data-categoria="cabelloHombres" src="" alt="Imagen dinámica">
+               </div>
                 <div class="detail-box">
                   <h5>
                   Cabello Hombre
@@ -510,45 +510,59 @@
     </div>
   </footer>
   <!-- footer section -->
-
-<script>// Ruta al archivo JSON
-  const url = 'https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/datos/galeria.json';
+  <script>
+    // Ruta al archivo JSON
+    const url = 'https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/datos/galeria.json';
   
-  // Función para cargar dinámicamente una imagen específica
-  async function cargarImagenDinamica() {
-    try {
-      const response = await fetch(url);
-      const data = await response.json();
+    // Función para cargar imágenes dinámicamente
+    async function cargarImagenesDinamicas() {
+      try {
+        const response = await fetch(url);
+        if (!response.ok) throw new Error(`Error al cargar JSON: ${response.status}`);
+        const data = await response.json();
   
-      // Obtener el elemento img y sus atributos personalizados
-      const imgElement = document.getElementById('imagenDinamica');
-      const id = parseInt(imgElement.dataset.id); // Obtener el ID del data-id
-      const categoria = imgElement.dataset.categoria; // Obtener la categoría del data-categoria
+        // Seleccionar todas las imágenes con la clase 'imagenDinamica'
+        const imgElements = document.querySelectorAll('.imagenDinamica');
   
-      // Buscar el elemento específico en el JSON
-      const elemento = data[categoria].find(item => item.id === id);
+        imgElements.forEach(imgElement => {
+          const id = parseInt(imgElement.dataset.id); // ID de la imagen
+          const categoria = imgElement.dataset.categoria; // Categoría de la imagen
   
-      if (elemento) {
-        // Asignar la imagen, título y descripción dinámicamente
-        imgElement.src = elemento.imagen;
-        imgElement.alt = elemento.descripcion;
+          // Validar la categoría y buscar por ID
+          const categoriaData = data[categoria];
+          if (!categoriaData) {
+            console.error(`Categoría "${categoria}" no encontrada en el JSON.`);
+            return;
+          }
   
-        const tituloElement = document.getElementById('tituloDinamico');
-        const descripcionElement = document.getElementById('descripcionDinamica');
+          const elemento = categoriaData.find(item => item.id === id);
+          if (elemento && elemento.imagen.trim()) {
+            // Asignar la imagen, título y descripción
+            imgElement.src = elemento.imagen;
+            imgElement.alt = elemento.descripcion;
   
-        tituloElement.textContent = categoria.replace(/cabello/, 'Cabello ');
-        descripcionElement.textContent = elemento.descripcion;
-      } else {
-        console.error('No se encontró el elemento con el ID especificado.');
+            const tituloElement = imgElement.nextElementSibling; // Asume que el título sigue a la imagen
+            const descripcionElement = tituloElement?.nextElementSibling; // La descripción sigue al título
+  
+            if (tituloElement) tituloElement.textContent = `Categoría: ${categoria}`;
+            if (descripcionElement) descripcionElement.textContent = elemento.descripcion;
+          } else {
+            // Imagen o descripción no disponibles
+            imgElement.src = 'https://via.placeholder.com/150'; // Imagen predeterminada
+            imgElement.alt = 'Imagen no disponible';
+            console.warn(`No se encontró un elemento válido para ID: ${id}, Categoría: ${categoria}`);
+          }
+        });
+      } catch (error) {
+        console.error('Error al cargar los datos del JSON:', error);
       }
-    } catch (error) {
-      console.error('Error al cargar el JSON:', error);
     }
-  }
   
-  // Llamar a la función al cargar el DOM
-  document.addEventListener('DOMContentLoaded', cargarImagenDinamica);
+    // Cargar las imágenes dinámicas cuando el DOM esté listo
+    document.addEventListener('DOMContentLoaded', cargarImagenesDinamicas);
   </script>
+  
+  
 
 
   <!-- jQery -->

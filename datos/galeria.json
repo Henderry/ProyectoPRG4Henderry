@@ -71,8 +71,67 @@
     {
       "id": 1,
       "descripcion": "Cabello Corto Liso",
+      "imagen": "https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/images/Cabellos%20Hombre/51651190_283242649039627_9039062912735379456_n.jpg"
+    },
+    {
+      "id": 2,
+      "descripcion": "Cabello Medio Liso",
+      "imagen": "https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/images/Cabellos%20Hombre/53160434_289168975113661_3024160844767297536_n.jpg"
+    },
+    {
+      "id": 3,
+      "descripcion": "Cabello Corto con Corte de Barba",
+      "imagen": "https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/images/Cabellos%20Hombre/53410169_292900141407211_4894033101132398592_n.jpg"
+    },
+    {
+      "id": 4,
+      "descripcion": "Cortes Variados",
+      "imagen": "https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/images/Cabellos%20Hombre/53820998_290959014934657_795306438594396160_n.jpg"
+    },
+    {
+      "id": 5,
+      "descripcion": "Cabello Corto Fade Medio",
+      "imagen": "https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/images/Cabellos%20Hombre/54212958_295334784497080_6764629884120596480_n.jpg"
+    },
+    {
+      "id": 6,
+      "descripcion": "Cabello Medio Liso",
+      "imagen": "https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/images/Cabellos%20Hombre/54525097_295423707821521_1233232617038413824_n.jpg"
+    },
+    {
+      "id": 7,
+      "descripcion": "Cabello para Chico",
+      "imagen": "https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/images/Cabellos%20Hombre/61759567_327365167960708_6173231862626910208_n.jpg"
+    },
+    {
+      "id": 8,
+      "descripcion": "Cabello Corto Estilo Rayas",
+      "imagen": "https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/images/Cabellos%20Hombre/70578466_380744689289422_2854772896595705856_n.jpg"
+    },
+    {
+      "id": 9,
+      "descripcion": "Cabello Largo Liso Copete",
+      "imagen": "https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/images/Cabellos%20Hombre/70845011_380744645956093_9110616277612756992_n.jpg"
+    },
+    {
+      "id": 10,
+      "descripcion": "Cabello Corto para Chico",
+      "imagen": "https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/images/Cabellos%20Hombre/77105727_422531018444122_7894479996939403264_n.jpg"
+    },
+    {
+      "id": 11,
+      "descripcion": "Cabello Corto Fade Alto",
+      "imagen": "https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/images/Cabellos%20Hombre/77297238_426674018029822_402602237097934848_n.jpg"
+    },
+    {
+      "id": 12,
+      "descripcion": "Cabello Liso Fade Alto",
+      "imagen": "https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/images/Cabellos%20Hombre/84285169_471484740215416_4293806963340345344_n.jpg"
+    },
+    {
+      "id": 13,
+      "descripcion": "Cabello Corto Mohicano",
       "imagen": "https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/images/Cabellos%20Hombre/202112027_758990111464876_8162703485153745378_n.jpg"
     }
-
   ]
 }
