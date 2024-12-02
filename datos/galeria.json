@@ -4,6 +4,75 @@
       "id": 1,
       "descripcion": "Promocion_1",
       "imagen": "https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/images/Cabello%20Mujer/download%20(1).jpeg"
+    },
+    {
+      "id": 2,
+      "descripcion": "Promocion_2",
+      "imagen": "https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/images/Cabello%20Mujer/download%20(2).jpeg"
+    },
+    {
+      "id": 3,
+      "descripcion": "Promocion_3",
+      "imagen": "https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/images/Cabello%20Mujer/download%20(3).jpeg"
+    },
+    {
+      "id": 4,
+      "descripcion": "Promocion_4",
+      "imagen": "https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/images/Cabello%20Mujer/download%20(4).jpeg"
+    },
+    {
+      "id": 5,
+      "descripcion": "Promocion_5",
+      "imagen": "https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/images/Cabello%20Mujer/download%20(5).jpeg"
+    },
+    {
+      "id": 6,
+      "descripcion": "Promocion_6",
+      "imagen": "https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/images/Cabello%20Mujer/download%20(6).jpeg"
+    },
+    {
+      "id": 7,
+      "descripcion": "Cabello Liso Medio",
+      "imagen": "https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/images/Cabello%20Mujer/download%20(7).jpeg"
+    },
+    {
+      "id": 8,
+      "descripcion": "Cabello Rojizo Largo",
+      "imagen": "https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/images/Cabello%20Mujer/download%20(8).jpeg"
+    },
+    {
+      "id": 9,
+      "descripcion": "Cabello Blanco Corto",
+      "imagen": "https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/images/Cabello%20Mujer/download%20(9).jpeg"
+    },
+    {
+      "id": 10,
+      "descripcion": "Cabello Rizo Largo",
+      "imagen": "https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/images/Cabello%20Mujer/download%20(10).jpeg"
+    },
+    {
+      "id": 11,
+      "descripcion": "Cabello Rizo Corto",
+      "imagen": "https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/images/Cabello%20Mujer/download%20(11).jpeg"
+    },
+    {
+      "id": 12,
+      "descripcion": "Cabello Rizo Medio con Coloracion",
+      "imagen": "https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/images/Cabello%20Mujer/download%20(12).jpeg"
+    },
+    {
+      "id": 13,
+      "descripcion": "Cabello Rizo Medio con Coloracion Oscura",
+      "imagen": "https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/images/Cabello%20Mujer/download%20(13).jpeg"
     }
+  ],
+
+  "cabelloHombres": [
+    {
+      "id": 1,
+      "descripcion": "Cabello Corto Liso",
+      "imagen": "https://raw.githubusercontent.com/Henderry/ProyectoPRG4Henderry/master/images/Cabello%20Hombre/202112027_758990111464876_8162703485153745378_n.jpg"
+    }
+
   ]
 }
