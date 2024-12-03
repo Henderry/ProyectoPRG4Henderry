@@ -13,7 +13,7 @@
   <meta name="author" content="" />
   <link rel="shortcut icon" href="images/favicon.png" type="">
 
-  <title> Feane </title>
+  <title> D&K </title>
 
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
@@ -36,15 +36,14 @@
 
   <div class="hero_area">
     <div class="bg-box">
-      <img src="images/hero-bg.jpg" alt="">
-    </div>
+   </div>
     <!-- header section strats -->
     <header class="header_section">
       <div class="container">
         <nav class="navbar navbar-expand-lg custom_nav-container ">
           <a class="navbar-brand" href="index.html">
             <span>
-              Feane
+              Salon D&K
             </span>
           </a>
 
@@ -54,17 +53,24 @@
 
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav  mx-auto ">
-              <li class="nav-item">
-                <a class="nav-link" href="index.html">Home </a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="menu.html">Menu</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="about.html">About</a>
-              </li>
               <li class="nav-item active">
-                <a class="nav-link" href="book.html">Book Table <span class="sr-only">(current)</span> </a>
+                <a class="nav-link" href="index.html">Incio <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="CabelloMujeres.html">Cabellos Mujeres</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="menu.html">Cabellos Hombres</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link" href="menu.html">Productos</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html">Acerca</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="book.html">Ubicanos</a>
               </li>
             </ul>
             <div class="user_option">
@@ -140,67 +146,115 @@
     </header>
     <!-- end header section -->
   </div>
-
-  <!-- book section -->
-  <section class="book_section layout_padding">
-    <div class="container">
-      <div class="heading_container">
-        <h2>
-          Book A Table
-        </h2>
-      </div>
-      <div class="row">
-        <div class="col-md-6">
-          <div class="form_container">
-            <form action="">
-              <div>
-                <input type="text" class="form-control" placeholder="Your Name" />
-              </div>
-              <div>
-                <input type="text" class="form-control" placeholder="Phone Number" />
-              </div>
-              <div>
-                <input type="email" class="form-control" placeholder="Your Email" />
-              </div>
-              <div>
-                <select class="form-control nice-select wide">
-                  <option value="" disabled selected>
-                    How many persons?
-                  </option>
-                  <option value="">
-                    2
-                  </option>
-                  <option value="">
-                    3
-                  </option>
-                  <option value="">
-                    4
-                  </option>
-                  <option value="">
-                    5
-                  </option>
-                </select>
-              </div>
-              <div>
-                <input type="date" class="form-control">
-              </div>
-              <div class="btn_box">
-                <button>
-                  Book Now
-                </button>
-              </div>
-            </form>
-          </div>
+<!-- sección de registro -->
+<section class="book_section layout_padding">
+  <div class="container">
+    <div class="heading_container">
+      <h2>
+        Formulario de Registro
+      </h2>
+    </div>
+    <div class="row">
+      <div class="col-md-6">
+        <div class="form_container">
+          <form id="registrationForm" action="" method="POST" onsubmit="return validarFormulario()">
+            <div>
+              <input type="text" class="form-control" placeholder="Nombre Completo" id="fullName" required />
+            </div>
+            <div>
+              <input type="email" class="form-control" placeholder="Correo Electrónico" id="email" required />
+            </div>
+            <div>
+              <input type="date" class="form-control" placeholder="Fecha de Nacimiento" id="birthDate" required onchange="calcularEdad()" />
+            </div>
+            <div>
+              <select class="form-control" id="incomeRange" required>
+                <option value="" disabled selected>Rango de Ingreso</option>
+                <option value="low">Bajo</option>
+                <option value="medium">Medio</option>
+                <option value="high">Alto</option>
+              </select>
+            </div>
+            <div>
+              <select class="form-control" id="gender" required>
+                <option value="" disabled selected>Género</option>
+                <option value="male">Masculino</option>
+                <option value="female">Femenino</option>
+                <option value="other">Otro</option>
+              </select>
+            </div>
+            <div>
+              <select class="form-control" id="degree" multiple required>
+                <option value="highschool">Secundaria</option>
+                <option value="bachelor">Licenciatura</option>
+                <option value="master">Maestría</option>
+                <option value="doctorate">Doctorado</option>
+              </select>
+            </div>
+            <div>
+              <!-- Campo oculto para la edad -->
+              <input type="hidden" id="age" name="age" />
+            </div>
+            <div class="btn_box">
+              <button type="submit">Enviar</button>
+            </div>
+          </form>
         </div>
-        <div class="col-md-6">
-          <div class="map_container ">
-            <div id="googleMap"></div>
-          </div>
+      </div>
+      <div class="col-md-6">
+        <div class="map_container">
+          <!-- iframe de Google Maps -->
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1005872.0621590185!2d-85.43581252187502!3d10.0013456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8fa0f9f9377b7cd5%3A0x13a69d1422c21c7d!2sDyksalondebelleza!5e0!3m2!1ses-419!2scr!4v1733131441153!5m2!1ses-419!2scr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
         </div>
       </div>
     </div>
-  </section>
-  <!-- end book section -->
+  </div>
+</section>
+<!-- fin sección de registro -->
+
+<script>
+  // Función para calcular la edad basada en la fecha de nacimiento
+  function calcularEdad() {
+    const fechaNacimiento = document.getElementById('birthDate').value;
+    const anioNacimiento = new Date(fechaNacimiento).getFullYear();
+    const anioActual = new Date().getFullYear();
+    const edad = anioActual - anioNacimiento;
+    
+    // Asignar la edad calculada al campo oculto
+    document.getElementById('age').value = edad;
+  }
+
+  // Función para mostrar un mensaje emergente al enviar el formulario
+  function mostrarAlerta() {
+    alert("¡Registro exitoso!");
+  }
+
+  // Función para validar el formulario antes de enviarlo
+  function validarFormulario() {
+    const nombre = document.getElementById('fullName').value;
+    const correo = document.getElementById('email').value;
+    const fechaNacimiento = document.getElementById('birthDate').value;
+    const genero = document.getElementById('gender').value;
+    const gradoAcademico = document.getElementById('degree').selectedOptions.length;
+
+    // Verificar si todos los campos están llenos
+    if (!nombre || !correo || !fechaNacimiento || !genero || gradoAcademico == 0) {
+      alert("Por favor, complete todos los campos.");
+      return false;
+    }
+
+    // Verificar que la edad sea calculada correctamente
+    const edad = document.getElementById('age').value;
+    if (edad < 18) {
+      alert("Debe tener al menos 18 años para registrarse.");
+      return false;
+    }
+
+    // Si todo es correcto, mostrar mensaje de éxito
+    mostrarAlerta();
+    return false; // Evitar envío del formulario (simulando el registro)
+  }
+</script>
 
   <!-- footer section -->
   <footer class="footer_section">
@@ -209,25 +263,25 @@
         <div class="col-md-4 footer-col">
           <div class="footer_contact">
             <h4>
-              Contact Us
+              Contactanos
             </h4>
             <div class="contact_link_box">
-              <a href="">
+              <a href="https://g.co/kgs/gypy2Tm" target="_blank">
                 <i class="fa fa-map-marker" aria-hidden="true"></i>
                 <span>
-                  Location
+                  Ubicacion
                 </span>
               </a>
-              <a href="">
+              <a href="tel:+50671789790" target="_blank">
                 <i class="fa fa-phone" aria-hidden="true"></i>
                 <span>
-                  Call +01 1234567890
+                  Llama +506 71789790"
                 </span>
               </a>
-              <a href="">
+              <a href="Dykstudiosrl@gmail.com">
                 <i class="fa fa-envelope" aria-hidden="true"></i>
                 <span>
-                  demo@gmail.com
+                  Dykstudiosrl@gmail.com
                 </span>
               </a>
             </div>
@@ -235,53 +289,49 @@
         </div>
         <div class="col-md-4 footer-col">
           <div class="footer_detail">
-            <a href="" class="footer-logo">
-              Feane
+            <a href="#" class="footer-logo">
+              D&K
             </a>
             <p>
-              Necessary, making this the first true generator on the Internet. It uses a dictionary of over 200 Latin words, combined with
+              El bienestar del cliente son Nuestra prioridad. Ofrecemos servicios profesionales, con expertos en cortes, peinados, tratamientos faciales y corporales, utilizando productos de alta calidad
+
+
+
+
+
+
             </p>
             <div class="footer_social">
-              <a href="">
+              <a href="https://www.facebook.com/DulimarM?locale=es_LA" target="_blank">
                 <i class="fa fa-facebook" aria-hidden="true"></i>
               </a>
-              <a href="">
-                <i class="fa fa-twitter" aria-hidden="true"></i>
-              </a>
-              <a href="">
-                <i class="fa fa-linkedin" aria-hidden="true"></i>
-              </a>
-              <a href="">
+              <a href="https://www.instagram.com/dyksalondebelleza/?fbclid=IwY2xjawG6WH5leHRuA2FlbQIxMAABHZFQpUmxdRTyRbP9eP1YLo4MGpo2aQp752sTr7RHTI1p0iedq1yFtsPOXA_aem_E-HiDak42jOyhB_PoW6ZHA#" target="_blank">
                 <i class="fa fa-instagram" aria-hidden="true"></i>
               </a>
-              <a href="">
-                <i class="fa fa-pinterest" aria-hidden="true"></i>
+              <a href="https://wa.me/71789790" target="_blank">
+                <i class="fa fa-whatsapp" aria-hidden="true"></i>
               </a>
             </div>
           </div>
         </div>
         <div class="col-md-4 footer-col">
           <h4>
-            Opening Hours
+            Abierto
           </h4>
           <p>
-            Everyday
+            Lunes-Sabado
           </p>
           <p>
-            10.00 Am -10.00 Pm
+            10.00 Am - 7.00 Pm
           </p>
         </div>
       </div>
       <div class="footer-info">
-        <p>
-          &copy; <span id="displayYear"></span> All Rights Reserved By
-          <a href="https://html.design/">Free Html Templates</a><br><br>
-          &copy; <span id="displayYear"></span> Distributed By
-          <a href="https://themewagon.com/" target="_blank">ThemeWagon</a>
-        </p>
+
       </div>
     </div>
   </footer>
+  
   <!-- footer section -->
 
   <!-- jQery -->
